@@ -22,26 +22,29 @@ const tabData = [
 const App = () => {
   function setActiveButton(tab) {
     setActiveTab(tab);
+    setCount(count+1)
   }
   function showBtnHandler() {
     setShow(!show);
-    console.log(show);
   }
   const [activeTab, setActiveTab] = useState(1);
   const [show, setShow] = useState(true);
-
+  const [count,setCount] = useState(0)
   let result = (
     <>
-        <Tabwrapper
-          setActiveButton={setActiveButton}
-          activeTab={activeTab}
-          tabData={tabData}
-        />
+      <Tabwrapper
+        setActiveButton={setActiveButton}
+        activeTab={activeTab}
+        tabData={tabData}
+      />
     </>
   );
   return (
     <>
-      <ShowButton onClick={showBtnHandler} show={show} />
+    <aside className="essentials">
+    <ShowButton onClick={showBtnHandler} show={show} />
+      <p className="count">{count}</p>
+    </aside>
       {show == true ? result : (result = <></>)}
     </>
   );

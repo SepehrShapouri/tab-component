@@ -1,4 +1,4 @@
-const TabWrapper = ({ setActiveButton, activeTab, tabData }) => {
+const TabWrapper = ({ setActiveButton, activeTab, tabData}) => {
   return (
     <div className="wrapper">
       <div className="tabWrapper">
